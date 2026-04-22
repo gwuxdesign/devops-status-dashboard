@@ -7,7 +7,7 @@ app = Flask(__name__)
 SERVICES = [
     {"name": "Adviser Portal",      "status": "operational",  "uptime": "99.98%"},
     {"name": "Document Service",    "status": "operational",  "uptime": "99.95%"},
-    {"name": "Notification Engine", "status": "degraded",     "uptime": "97.32%"},
+    {"name": "Notification Engine", "status": "operational",  "uptime": "97.32%"},
     {"name": "Reporting API",       "status": "operational",  "uptime": "99.87%"},
     {"name": "Authentication",      "status": "operational",  "uptime": "100.00%"},
     {"name": "Data Sync Service",   "status": "maintenance",  "uptime": "98.61%"},
