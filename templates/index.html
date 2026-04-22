@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Status Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>Platform Status</h1>
+                <span class="summary-badge {% if operational == total %}all-good{% else %}issues{% endif %}">
+                    {% if operational == total %}
+                        All Systems Operational
+                    {% else %}
+                        {{ operational }}/{{ total }} Systems Operational
+                    {% endif %}
+                </span>
+            </div>
+            <p class="last-updated">Last updated: {{ last_updated }}</p>
+        </header>
+
+        <main>
+            <div class="service-grid">
+                {% for service in services %}
+                <div class="service-card {{ service.status }}">
+                    <div class="service-info">
+                        <h2>{{ service.name }}</h2>
+                        <span class="uptime">Uptime: {{ service.uptime }}</span>
+                    </div>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-label">{{ service.status | capitalize }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+
+        <footer>
+            <p>Internal platform monitoring — not for external distribution</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f4f6f9;
+    color: #1a1a2e;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.summary-badge {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.summary-badge.all-good {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.summary-badge.issues {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.last-updated {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.service-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-left: 4px solid transparent;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.service-card.operational { border-left-color: #10b981; }
+.service-card.degraded    { border-left-color: #f59e0b; }
+.service-card.maintenance { border-left-color: #6366f1; }
+.service-card.outage      { border-left-color: #ef4444; }
+
+.service-info h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.uptime {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.operational .status-dot { background: #10b981; }
+.degraded    .status-dot { background: #f59e0b; }
+.maintenance .status-dot { background: #6366f1; }
+.outage      .status-dot { background: #ef4444; }
+
+.status-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.operational .status-label { color: #065f46; }
+.degraded    .status-label { color: #92400e; }
+.maintenance .status-label { color: #4338ca; }
+.outage      .status-label { color: #991b1b; }
+
+footer {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
